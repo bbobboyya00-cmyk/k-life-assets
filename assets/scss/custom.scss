@@ -58,3 +58,37 @@
 }
 
 
+html, body {
+    max-width: 100vw;
+    overflow-x: hidden;
+    position: relative;
+    /* 모바일 바운스 현상 시 배경이 튀어 보이는 현상 방지 */
+    overscroll-behavior-x: none; 
+}
+
+/* 모든 요소의 박스 모델을 border-box로 강제 (패딩이 너비를 키우지 않게 함) */
+* {
+    box-sizing: border-box;
+}
+
+
+pre, code {
+    white-space: pre-wrap; /* 줄바꿈 허용 */
+    word-break: break-all;
+}
+
+/* 2. 에디터님이 만든 AEO 박스 및 지도 박스 너비 고정 */
+.aeo-summary-box, .k-map-box, .k-map-buttons {
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: 100% !important;
+}
+
+/* 3. 테이블 넘침 방지 */
+table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
