@@ -13,7 +13,7 @@ rm -rf resources/_gen
 
 # 1. 빌드 성공 여부 사전 체크 (절대 경로 /snap/bin/hugo 사용 필수)
 # --gc (Garbage Collection) 옵션과 함께 실행하여 최적화된 결과물을 생성합니다.
-if ! HUGO_ENV=production /snap/bin/hugo --gc --minify --cleanDestinationDir; then
+if ! HUGO_ENV=production hugo --gc --minify --cleanDestinationDir; then
     echo "❌ [ERROR] Hugo build failed! Deployment aborted to save your files."
     exit 1
 fi

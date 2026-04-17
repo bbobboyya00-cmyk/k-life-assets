@@ -92,3 +92,44 @@ table {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
 }
+
+/* 관련 콘텐츠 위젯 안정화 */
+aside.sidebar .article-list--tile {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1.5rem !important;
+    overflow: hidden !important; /* 내부 요소가 튀어나와 레이아웃을 깨는 것 방지 */
+}
+
+.article-list--tile article {
+    margin: 0 !important;
+    width: 100% !important;
+    min-height: 100px; /* 높이 최소값 보장으로 덜그럭거림(Jump) 방지 */
+}
+
+.article-list--tile article .article-image img {
+    aspect-ratio: 16 / 9 !important; /* 종횡비 강제 고정 */
+    object-fit: cover !important;
+}
+
+
+/* [v92.4] Quick Summary(Alert) 및 날씨 섹션 유격 압축 */
+.alert {
+    margin-top: 0.5rem !important;
+    margin-bottom: 1rem !important;
+    padding: 1rem 1.2rem !important; /* 박스 내부 패딩 축소 */
+}
+
+.alert p {
+    margin-top: 0 !important;
+    margin-bottom: 0.5rem !important; /* 제목과 리스트 사이 간격 축소 */
+}
+
+.alert ul {
+    margin-bottom: 0 !important; /* 리스트 하단 공백 제거 */
+}
+
+/* 날씨 위젯 박스 상단 여백 추가 보정 */
+.k-weather-section {
+    margin-top: 10px !important;
+}
