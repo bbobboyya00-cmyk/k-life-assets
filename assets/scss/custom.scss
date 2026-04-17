@@ -1,0 +1,60 @@
+/* [TA] psImg Layout - Perfect Mobile Responsive */
+.psImg, .psimg {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important; /* nowrap 제거 */
+    gap: 10px !important;
+    margin: 35px 0 !important;
+    width: 100% !important;
+}
+
+/* Hugo가 이미지 주변에 p태그를 강제 삽입할 경우를 대비 */
+.psImg p, .psimg p {
+    display: contents !important; /* 태그는 유지하되 레이아웃에 영향 안 줌 */
+}
+
+.psImg img, .psimg img {
+    flex: 1 1 calc(50% - 5px) !important; /* 너비 비중 명시 */
+    width: 100% !important;
+    max-width: calc(50% - 5px) !important;
+    height: auto !important;
+    aspect-ratio: 1 / 1 !important;
+    object-fit: cover !important;
+    border-radius: 12px !important;
+    margin: 0 !important;
+}
+
+@media screen and (max-width: 768px) {
+    .psImg, .psimg {
+        flex-direction: column !important;
+    }
+    .psImg img, .psimg img {
+        max-width: 100% !important;
+        aspect-ratio: auto !important; /* 모바일은 원본 비율로 */
+        flex: 1 1 100% !important;
+    }
+}
+
+/* 일본어 포스팅 전용: h2를 Alert Box 스타일로 변경 */
+.article-page.template-archives .main-article .article-content h2,
+.article-page.template-post .main-article .article-content h2 {
+    padding: 1rem 1.5rem;
+    background-color: var(--card-background);
+    border-left: 5px solid var(--theme-color); /* 테마 포인트 컬러 사용 */
+    border-radius: 8px;
+    box-shadow: var(--shadow-l1);
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+
+    /* 앞에 아이콘(✨) 자동 삽입 (선택 사항) */
+    &::before {
+        content: "📌";
+        margin-right: 10px;
+        font-size: 1.2rem;
+    }
+}
+
+
